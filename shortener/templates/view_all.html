@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-sm-12 col-md-12">
+
+					<div class="block-flat">
+						<div class="header">							
+							<h3>All URLs</h3>
+						</div>
+						<div class="content">
+							<table>
+								<thead>
+									<tr>
+										<th style="width:50%;">Original URL</th>
+										<th>Shortened URL</th>
+										<th class="text-right">Visit Count</th>
+                                        <th class="text-right">Shorten Count</th>
+									</tr>
+								</thead>
+								<tbody>
+                                    {% for url in urls %}
+									<tr>
+										<td style="width:30%;">{{ url.original_url }}</td>
+                                        <td style="width:30%;">http://localhost:8000/shortener/{{  url.shortened_url }}</td>
+										<td class="text-right">{{ url.visit_count }}</td>
+										<td class="text-right">{{ url.shorten_count }}</td>
+									</tr>
+									{% endfor %}
+								</tbody>
+							</table>						
+						</div>
+					</div>
+					
+					
+				
+				</div>	
+{% endblock %}
